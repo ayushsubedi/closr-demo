@@ -37,8 +37,7 @@
     display: flex; align-items: center; justify-content: space-between;
     gap: 16px; flex-wrap: wrap;
   }
-  .wordmark { font-weight: 800; font-size: 20px; letter-spacing: 0.02em; }
-  .wordmark span { color: var(--secondary); }
+  .logo { height: 28px; width: auto; display: block; }
   header.top p {
     margin: 0; font-size: 13px; color: var(--ink-muted); font-weight: 600;
   }
@@ -175,8 +174,17 @@
 <body>
 
 <header class="top">
-  <div class="wordmark">CLOSR<span>.</span></div>
-  <p>Product walkthrough &mdash; every screen, captured live</p>
+  <svg class="logo" viewBox="0 0 750 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Closr">
+    <path fill="#1d7fc3" d="M 153.191406 36.945312 L 153.191406 84.828125 L 148.1875 88.53125 L 148.1875 77.417969 L 112.882812 77.417969 L 112.882812 62.40625 L 139.992188 68.4375 L 139.992188 63.308594 L 128.558594 60.789062 L 128.558594 31.484375 Z M 107.878906 102.023438 L 54.324219 102.023438 L 54.324219 120.3125 C 72.1875 120.3125 90.011719 120.3125 107.878906 120.3125 Z M 54.324219 97.511719 L 107.878906 97.511719 L 107.878906 61.3125 L 54.324219 49.484375 Z M 123.554688 59.699219 L 49.84375 43.40625 L 49.84375 120.3125 L 15.011719 120.3125 L 15.011719 124.726562 L 241.722656 124.726562 L 241.722656 120.3125 L 203.128906 120.3125 L 203.128906 92.191406 L 173.15625 70.054688 L 158.195312 81.121094 L 158.195312 32.90625 L 123.554688 25.257812 Z M 143.1875 81.929688 L 143.1875 120.3125 L 112.882812 120.3125 L 112.882812 81.929688 Z M 148.1875 120.3125 L 148.1875 94.46875 L 173.15625 75.992188 L 198.121094 94.46875 L 198.121094 120.3125 Z M 148.1875 120.3125 "/>
+    <g transform="matrix(1, 0, 0, 1, 237, 24)" fill="#ff8800">
+      <g transform="translate(1.265673, 99.52637)"><path d="M 40.984375 -72.3125 C 47.640625 -72.3125 53.316406 -71.15625 58.015625 -68.84375 L 58.015625 -52.515625 L 57.90625 -52.40625 C 55.914062 -55.46875 51.71875 -57.492188 45.3125 -58.484375 C 43.425781 -58.804688 41.039062 -58.96875 38.15625 -58.96875 C 35.269531 -58.96875 32.441406 -58.425781 29.671875 -57.34375 C 26.898438 -56.257812 24.625 -54.722656 22.84375 -52.734375 C 19.394531 -48.847656 17.671875 -43.3125 17.671875 -36.125 C 17.671875 -27.769531 19.859375 -21.546875 24.234375 -17.453125 C 27.859375 -14.035156 32.660156 -12.328125 38.640625 -12.328125 C 45.398438 -12.328125 50.878906 -13.769531 55.078125 -16.65625 C 56.609375 -17.6875 57.90625 -18.96875 58.96875 -20.5 L 59.125 -20.390625 L 59.125 -5.4375 C 53.6875 -0.925781 46.359375 1.328125 37.140625 1.328125 C 26.285156 1.328125 17.785156 -2.117188 11.640625 -9.015625 C 5.734375 -15.597656 2.78125 -24.316406 2.78125 -35.171875 C 2.78125 -46.660156 6.015625 -55.710938 12.484375 -62.328125 C 19.035156 -68.984375 28.535156 -72.3125 40.984375 -72.3125 Z M 40.984375 -72.3125 "/></g>
+      <g transform="translate(110.577075, 99.52637)"><path d="M 19.578125 0 C 14.347656 0 10.878906 0.101562 9.171875 0.3125 L 9.171875 -71.296875 C 10.023438 -71.085938 11.796875 -70.984375 14.484375 -70.984375 C 17.171875 -70.984375 20.296875 -71.050781 23.859375 -71.1875 L 23.859375 -12.8125 L 34.90625 -12.8125 C 38.101562 -12.8125 40.664062 -12.914062 42.59375 -13.125 C 42.34375 -4.800781 42.21875 -0.476562 42.21875 -0.15625 L 42.21875 0.375 C 38.726562 0.125 32.875 0 24.65625 0 Z M 19.578125 0 "/></g>
+      <g transform="translate(202.116148, 99.52637)"><path d="M 15 -8.4375 C 11.757812 -11.53125 9.203125 -15.242188 7.328125 -19.578125 C 5.460938 -23.921875 4.53125 -28.679688 4.53125 -33.859375 C 4.53125 -39.035156 5.398438 -43.9375 7.140625 -48.5625 C 8.890625 -53.1875 11.382812 -57.257812 14.625 -60.78125 C 17.863281 -64.300781 21.773438 -67.101562 26.359375 -69.1875 C 30.953125 -71.269531 36.09375 -72.3125 41.78125 -72.3125 C 51.601562 -72.3125 59.878906 -69.21875 66.609375 -63.03125 C 73.796875 -56.40625 77.390625 -47.472656 77.390625 -36.234375 C 77.390625 -25.347656 73.6875 -16.296875 66.28125 -9.078125 C 61.726562 -4.628906 56.300781 -1.566406 50 0.109375 C 46.90625 0.921875 43.285156 1.328125 39.140625 1.328125 C 34.992188 1.328125 30.742188 0.472656 26.390625 -1.234375 C 22.035156 -2.941406 18.238281 -5.34375 15 -8.4375 Z M 19.375 -34.578125 C 19.375 -31.273438 19.925781 -28.234375 21.03125 -25.453125 C 22.132812 -22.679688 23.660156 -20.300781 25.609375 -18.3125 C 29.773438 -14.101562 35.132812 -12 41.6875 -12 C 47.90625 -12 52.898438 -14.007812 56.671875 -18.03125 C 60.515625 -22.195312 62.4375 -27.875 62.4375 -35.0625 C 62.4375 -41.820312 60.601562 -47.460938 56.9375 -51.984375 C 52.988281 -56.816406 47.582031 -59.234375 40.71875 -59.234375 C 34.0625 -59.234375 28.78125 -56.78125 24.875 -51.875 C 21.207031 -47.28125 19.375 -41.515625 19.375 -34.578125 Z M 19.375 -34.578125 "/></g>
+      <g transform="translate(329.947093, 99.52637)"><path d="M 52.03125 -67.03125 L 51.015625 -51.34375 L 50.640625 -51.234375 C 48.015625 -55.179688 43.535156 -57.742188 37.203125 -58.921875 C 35.203125 -59.304688 33.285156 -59.5 31.453125 -59.5 C 29.628906 -59.5 28.066406 -59.335938 26.765625 -59.015625 C 25.460938 -58.703125 24.347656 -58.242188 23.421875 -57.640625 C 21.472656 -56.359375 20.5 -54.6875 20.5 -52.625 C 20.5 -49.914062 21.351562 -47.882812 23.0625 -46.53125 C 25.1875 -44.894531 28.722656 -43.75 33.671875 -43.09375 C 38.617188 -42.4375 42.585938 -41.535156 45.578125 -40.390625 C 48.566406 -39.253906 51.019531 -37.816406 52.9375 -36.078125 C 56.570312 -32.804688 58.390625 -28.179688 58.390625 -22.203125 C 58.390625 -14.367188 55.4375 -8.335938 49.53125 -4.109375 C 44.476562 -0.484375 38.109375 1.328125 30.421875 1.328125 C 24.234375 1.328125 18.113281 0.15625 12.0625 -2.1875 C 10.070312 -2.96875 8.328125 -3.875 6.828125 -4.90625 L 7.421875 -22.734375 L 7.625 -22.890625 C 12.039062 -15.273438 19.285156 -11.46875 29.359375 -11.46875 C 36.503906 -11.46875 41.234375 -13.195312 43.546875 -16.65625 C 44.328125 -17.820312 44.71875 -19.125 44.71875 -20.5625 C 44.71875 -22.007812 44.484375 -23.203125 44.015625 -24.140625 C 43.554688 -25.085938 42.796875 -25.898438 41.734375 -26.578125 C 39.671875 -27.929688 36.203125 -28.835938 31.328125 -29.296875 C 26.453125 -29.765625 22.46875 -30.632812 19.375 -31.90625 C 16.28125 -33.1875 13.804688 -34.769531 11.953125 -36.65625 C 8.609375 -40.070312 6.9375 -44.84375 6.9375 -50.96875 C 6.9375 -57.300781 9.160156 -62.425781 13.609375 -66.34375 C 18.128906 -70.320312 24.222656 -72.3125 31.890625 -72.3125 C 39.554688 -72.3125 46.269531 -70.550781 52.03125 -67.03125 Z M 52.03125 -67.03125 "/></g>
+      <g transform="translate(439.525348, 99.52637)"><path d="M 32.125 -27.59375 C 31.0625 -27.519531 29.921875 -27.484375 28.703125 -27.484375 C 27.492188 -27.484375 25.703125 -27.570312 23.328125 -27.75 L 23.328125 0 L 9.171875 0 L 9.171875 -71.359375 C 14.160156 -71.992188 20.28125 -72.3125 27.53125 -72.3125 C 37.425781 -72.3125 44.800781 -70.488281 49.65625 -66.84375 C 54.507812 -63.195312 56.9375 -57.566406 56.9375 -49.953125 C 56.9375 -44.046875 54.710938 -38.992188 50.265625 -34.796875 C 48.804688 -33.441406 47.132812 -32.265625 45.25 -31.265625 L 56.140625 -8.328125 C 58.273438 -3.597656 59.910156 -0.785156 61.046875 0.109375 L 60.78125 0.375 C 57.332031 -0.195312 51.910156 -0.179688 44.515625 0.421875 Z M 28.546875 -59.71875 C 26.734375 -59.71875 24.992188 -59.628906 23.328125 -59.453125 L 23.328125 -39.0625 C 25.066406 -38.8125 27.109375 -38.6875 29.453125 -38.6875 C 31.804688 -38.6875 33.78125 -38.890625 35.375 -39.296875 C 36.976562 -39.710938 38.367188 -40.347656 39.546875 -41.203125 C 42.066406 -43.085938 43.328125 -45.914062 43.328125 -49.6875 C 43.328125 -53.457031 42.015625 -56.109375 39.390625 -57.640625 C 36.929688 -59.023438 33.316406 -59.71875 28.546875 -59.71875 Z M 28.546875 -59.71875 "/></g>
+    </g>
+  </svg>
+  <p>Built for the day-to-day of running a brokerage, not a slide deck</p>
 </header>
 
 <nav class="tabs" id="tabs"></nav>
@@ -248,88 +256,90 @@ function panelHTML(id) {
     case "lead-gen": return `
       <div class="panel-head">
         <p class="eyebrow">Lead Gen</p>
-        <h1>Add a lead in seconds</h1>
-        <p>Name, budget, property type, and a real address lookup &mdash; not a stub. Every lead lands straight in the pipeline.</p>
+        <h1>Every new inquiry captured in full, in under a minute</h1>
+        <p>The first few minutes after a lead comes in decide whether your agency keeps it or loses it to whoever responds first. Closr's intake form asks for what actually matters: budget, timeline, property type, and location, with a live address lookup instead of a free-text field someone has to clean up later. Nothing here is busywork. Every field feeds straight into LPMAMA scoring and the matching engine, so a lead is qualified and matched the moment it's created, not hours later when someone finally gets around to it.</p>
       </div>
-      ${clip("create-lead", "Creating a lead", "Full intake form: identity, budget, property type, live address search.")}
+      ${clip("create-lead", "Creating a lead", "The full intake flow: identity, budget, property type, and a live address search, start to finish.")}
     `;
     case "pipeline": return `
       <div class="panel-head">
         <p class="eyebrow">Pipeline</p>
-        <h1>Every lead, staged by how close it is to closing</h1>
-        <p>A board built around the 9-stage pipeline, from New through Converted &mdash; filterable, and built for drag-and-drop.</p>
+        <h1>One board, nine stages, nothing hidden</h1>
+        <p>Nine pipeline stages map to how a real deal actually moves, from New through Converted, so the board reads the same way your team already talks about a deal. Filter down to just the stages you're working today, or switch to a compact view to scan the whole flow at once. Moving a lead forward is a single drag between columns, not a status dropdown buried three clicks deep, which is exactly why agents actually keep it current instead of letting it drift out of sync with reality.</p>
       </div>
-      ${clip("dashboard-tour", "The pipeline board", "Filter stages, switch between full and compact views.")}
-      ${clip("drag-pipeline", "Moving a deal forward", "A real drag between pipeline stages, with the app's own confirmation.")}
+      ${clip("dashboard-tour", "The pipeline board", "Filtering stages and switching between full and compact views.")}
+      ${clip("drag-pipeline", "Moving a deal forward", "A real drag between pipeline stages, confirmed by the app itself.")}
     `;
     case "lead-mgmt": return `
       <div class="panel-head">
         <p class="eyebrow">Lead Management</p>
-        <h1>Everything about a lead, in one place</h1>
-        <p>Contact info, requirements, matched properties, reminders, and history &mdash; update any of it without leaving the page.</p>
+        <h1>Everything about a lead, without switching tools</h1>
+        <p>Contact info, budget and requirements, matched listings, follow-up reminders, and full history sit on one page. That matters because the alternative, a spreadsheet for details, a separate calendar for the next follow-up, a notes app for what was last said, is exactly how leads get dropped. Editing a lead updates the same record everyone else sees. Reassigning it to a different agent takes one search and one click, so ownership is never ambiguous.</p>
       </div>
-      ${clip("lead-detail", "Lead detail view", "Contact info, requirements, and follow-up tools together.")}
-      ${clip("edit-lead", "Editing a lead", "The same intake form, pre-filled, for keeping details current.")}
-      ${clip("assign-agent", "Assigning ownership", "Search the team and assign a lead in one click.")}
-      <div class="callout"><p>Contact info (email, phone) lives directly on the lead record &mdash; there's no separate "Contacts" list to maintain in parallel.</p></div>
+      ${clip("lead-detail", "Lead detail view", "Contact info, requirements, and follow-up tools together on one page.")}
+      ${clip("edit-lead", "Editing a lead", "The same intake form, pre-filled, for keeping a lead's details accurate as things change.")}
+      ${clip("assign-agent", "Assigning ownership", "Searching the team and reassigning a lead in one click.")}
+      <div class="callout"><p>On the web, contact info lives directly on the lead record, no separate contacts list to keep in sync by hand. The mobile app goes further with a full contacts list that cross-links back to leads both ways.</p></div>
     `;
     case "properties": return `
       <div class="panel-head">
         <p class="eyebrow">Properties &amp; Matching</p>
-        <h1>A portfolio that works both directions</h1>
-        <p>List a property once, and it's checked against every lead's requirements &mdash; the same way a lead is checked against every listing.</p>
+        <h1>List once, let the matching engine do the cross-referencing</h1>
+        <p>A portfolio only helps if agents remember to check it against every lead, and a lead list only helps if someone remembers to check it against every new listing. Closr's matching engine does both automatically. The moment a property or a lead is added, it's checked against everything on the other side on price, location, and property type, and the fit shows up as a score, not a hunch. That turns "let me see if I have anything for you" into an answer that's already waiting when the lead calls back.</p>
       </div>
-      ${clip("properties-browse", "Browsing the portfolio", "Search and sort across every active listing.")}
-      ${clip("create-property", "Listing a property", "Basic info, pricing, the same address lookup as leads, and a photo gallery.")}
-      ${clip("property-matching", "The matching engine", "Every lead is checked against your listings automatically.")}
+      ${clip("properties-browse", "Browsing the portfolio", "Searching and sorting across every active listing.")}
+      ${clip("create-property", "Listing a property", "Basic info, pricing, the same address lookup used for leads, and a photo gallery.")}
+      ${clip("property-matching", "The matching engine", "A lead checked against the portfolio automatically, with a scored result.")}
       ${clip("property-detail", "Property detail view", "Price, photos, and the full description in one view.")}
     `;
     case "calendar": return `
       <div class="panel-head">
         <p class="eyebrow">Calendar &amp; Scheduling</p>
-        <h1>Book a showing without leaving the lead</h1>
-        <p>Pick a property, set the date and time &mdash; with quick shortcuts for the common cases &mdash; and it's on the shared calendar.</p>
+        <h1>A booked showing is the strongest signal a lead can give you</h1>
+        <p>In the LPMAMA framework, a booked appointment is rated the single strongest qualification signal there is, ahead of budget and ahead of urgency. Scheduling can't be an afterthought in a separate calendar app disconnected from the lead record. Book a showing straight from the lead: pick a property, set a time with a quick shortcut or an exact date, and it lands on one shared calendar the whole team can see, organized by day and by lead.</p>
       </div>
-      ${clip("schedule-showing", "Scheduling a showing", "Property picker, then date, time, and duration.")}
-      ${clip("calendar-view", "The showings calendar", "Every showing across every lead, month by month.")}
+      ${clip("schedule-showing", "Scheduling a showing", "Picking a property, then setting the date, time, and duration.")}
+      ${clip("calendar-view", "The showings calendar", "Every showing across every lead, laid out by month.")}
     `;
     case "team": return `
       <div class="panel-head">
         <p class="eyebrow">Team</p>
-        <h1>Everyone on the team, one roster</h1>
-        <p>Roles and status for every member, with lead assignment built directly into the pipeline.</p>
+        <h1>Brokers see the whole floor. Agents see their own desk.</h1>
+        <p>A brokerage isn't one person working one pipeline. It's several agents each working their own leads inside a pipeline the broker needs to see across all of them at once. Every member shows up on one roster with their role and status. Brokers and admins get visibility across the entire team's activity: who's assigned what, where every lead sits in the pipeline, and how the whole book is performing, not just their own deals. Agents work what's assigned to them. Reassigning a lead from one agent to another, when someone's out, when a deal needs a specialist, when the team is rebalancing, is a search and a click, not a conversation with support.</p>
       </div>
       ${clip("team-roster", "Team roster", "Members, roles, and status at a glance.")}
     `;
     case "analytics": return `
       <div class="panel-head">
         <p class="eyebrow">Analytics</p>
-        <h1>Know your numbers, not just your gut</h1>
-        <p>Lead volume, hotness distribution, pipeline mix, and trends over time &mdash; built on the same data as the board.</p>
+        <h1>What a spreadsheet can't tell you fast enough</h1>
+        <p>Total and active leads, plus a live conversion rate, give a broker a health check without opening a single spreadsheet. Hotness distribution shows how many leads are actually ready to move right now versus how many just look busy on the board, so the team knows where to spend the next hour. Pipeline mix shows where deals are piling up: if half your leads are stuck at Contacted, that's worth knowing today, not at quarter end. Budget-versus-property-price comparisons show whether you're losing leads because there's genuinely no inventory in their range. Trend and geographic charts show whether volume is growing, shrinking, or shifting to a new area, so acquisition spend can follow actual demand instead of a hunch.</p>
       </div>
-      ${clip("analytics", "Analytics dashboard", "Totals, hotness distribution, and trends over time.")}
+      ${clip("analytics", "Analytics dashboard", "Totals, hotness distribution, pipeline mix, and trends over time.")}
     `;
     case "messaging": return `
       <div class="panel-head">
         <p class="eyebrow">Messaging &amp; AI</p>
-        <h1>Drafting emails is the least of it</h1>
-        <p>AI runs through the whole pipeline &mdash; always with a human between it and your client.</p>
+        <h1>The blank message box is where follow-ups die</h1>
+        <p>Response speed is one of the best-documented conversion levers in real estate, and the thing that slows an agent down most isn't typing, it's not knowing what to say. Closr drafts a starting point pulled from what the lead actually told you (their budget, property type, and location), not a generic template, so the agent reviews and sends instead of staring at an empty box. Nothing goes out without a human reading it first. That review step isn't a setting someone could switch off under deadline pressure. It's how sending is built.</p>
       </div>
-      ${clip("compose-message", "Composing a message", "An AI-drafted starting point, reviewed before it's ever sent.")}
+      ${clip("compose-message", "Composing a message", "An AI-drafted starting point, reviewed before it's sent.")}
       <div class="feature-list" style="margin-top:8px;">
-        <div class="feature-row"><span class="n">01</span><div><h4>Draft replies<span class="status shipped">Shown above</span></h4><p>Email and SMS, in your voice, ready to send &mdash; not a canned template.</p></div></div>
-        <div class="feature-row"><span class="n">02</span><div><h4>Call transcripts &amp; summaries<span class="status roadmap">Roadmap</span></h4><p>Every call recapped with action items filed straight into the pipeline.</p></div></div>
-        <div class="feature-row"><span class="n">03</span><div><h4>Qualification assist<span class="status roadmap">Roadmap</span></h4><p>LPMAMA signals pulled from the actual conversation, not just a form.</p></div></div>
-        <div class="feature-row"><span class="n">04</span><div><h4>Smart scheduling<span class="status roadmap">Roadmap</span></h4><p>Showings proposed and booked around both calendars automatically.</p></div></div>
-        <div class="feature-row"><span class="n">05</span><div><h4>Market briefs<span class="status roadmap">Roadmap</span></h4><p>A quick comp summary drafted before every listing appointment.</p></div></div>
-        <div class="feature-row"><span class="n">06</span><div><h4>Urgency detection<span class="status roadmap">Roadmap</span></h4><p>Flags a cooling lead before it goes cold, not after.</p></div></div>
+        <div class="feature-row"><span class="n">01</span><div><h4>Draft replies<span class="status shipped">Shown above</span></h4><p>Email and SMS, personalized to the lead's actual requirements, ready to review and send. Not a canned template.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Call transcripts &amp; summaries<span class="status roadmap">Roadmap</span></h4><p>Every call recapped automatically, with action items filed straight into the pipeline instead of left in someone's memory.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Qualification assist<span class="status roadmap">Roadmap</span></h4><p>LPMAMA signals pulled from the actual conversation, so a score updates from what was really said, not just what got typed into a form.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Smart scheduling<span class="status roadmap">Roadmap</span></h4><p>Showings proposed and booked around both calendars automatically, cutting out the back-and-forth to find a time that works.</p></div></div>
+        <div class="feature-row"><span class="n">05</span><div><h4>Market briefs<span class="status roadmap">Roadmap</span></h4><p>A quick comparable-sales summary drafted before every listing appointment, so prep time shrinks from an hour to a read-through.</p></div></div>
+        <div class="feature-row"><span class="n">06</span><div><h4>Urgency detection<span class="status roadmap">Roadmap</span></h4><p>Flags a cooling lead before it goes cold, not after, while there's still time to do something about it.</p></div></div>
       </div>
     `;
     case "scoring": return `
       <div class="panel-head">
-        <p class="eyebrow">Scoring engine</p>
-        <h1>Real-time LPMAMA scoring</h1>
-        <p>Six qualification dimensions, drawn from the real estate industry's standard LPMAMA framework, evaluated continuously into one live score &mdash; the number you see on every lead card and in analytics. Rules-based and explainable, not a generative-AI guess.</p>
+        <p class="eyebrow">Scoring Engine</p>
+        <h1>A benchmark your team already trusts, not a black box</h1>
+        <p>LPMAMA isn't something Closr invented. It's a qualification framework real estate agents have trained on for years, long before any CRM tried to automate it. That matters more than it sounds like it should: when a new tool forces a team to learn a whole new scoring philosophy, adoption stalls, because nobody trusts a number they don't understand. A LPMAMA score means the same thing to an agent on day one as it does a year in. There's no ramp-up and nothing to take on faith.</p>
+        <p>The score is rules-based, not a generative-AI guess. If a lead scores 40 instead of 80, an agent can see exactly which factor is pulling it down (no booked appointment yet, an unclear budget, no urgency) and knows precisely what to ask on the next call. A model that just outputs a number can't be interrogated the same way, and confidence in a score nobody can explain erodes fast. An agent needs to be able to defend a priority call to a broker, and "the AI said so" isn't a defense.</p>
+        <p>Six factors is a deliberate choice, not a limitation. A cash buyer with a booked showing is obviously closer to closing than someone still deciding on a neighborhood, and it doesn't take forty data points to know that. A scoring system only creates value if the team actually looks at it and acts on it every day, and a simple, explainable number is what gets used. A sophisticated model nobody fully trusts just gets ignored.</p>
       </div>
       <div class="grid3">
         <div class="cell"><div class="letter">L</div><h4>Location</h4><p>Specific neighborhood preference, or open to anything.</p></div>
@@ -339,47 +349,51 @@ function panelHTML(id) {
         <div class="cell"><div class="letter">M</div><h4>Mortgage</h4><p>Cash buyer or pre-approved moves fast.</p></div>
         <div class="cell"><div class="letter">A</div><h4>Appointment</h4><p>A booked viewing is the single strongest signal.</p></div>
       </div>
-      <div class="callout"><p>The single aggregate score is visible today throughout Lead Management and Analytics; a per-dimension breakdown view is not yet part of the product.</p></div>
+      <div class="callout"><p>The single aggregate score is visible today throughout Lead Management and Analytics. A factor-by-factor breakdown view is on the roadmap.</p></div>
     `;
     case "concierge": return `
       <div class="panel-head">
         <p class="eyebrow">Concierge Service</p>
-        <h1>Moving off a spreadsheet, without doing it alone</h1>
-        <p>A managed onboarding option for teams who want a hand making the switch &mdash; not just software, a team behind it.</p>
+        <h1>The difference between buying software and getting a team</h1>
+        <p>Most CRM switches fail quietly. Not because the software is bad, but because nobody has the hours to migrate years of spreadsheet data, configure a new pipeline, and keep chasing the leads that go quiet, on top of an already full day of actual selling. Concierge exists to remove that cost entirely, so switching to Closr costs your team time up front, not months of half-finished setup.</p>
       </div>
       <div class="feature-list">
-        <div class="feature-row"><span class="n">01</span><div><h4>Migration, handled</h4><p>Your existing spreadsheet or CRM export, brought into Closr for you &mdash; not a DIY import.</p></div></div>
-        <div class="feature-row"><span class="n">02</span><div><h4>Hands-on through every journey</h4><p>Help setting up your pipeline, your team, and your first listings, not just a support inbox.</p></div></div>
-        <div class="feature-row"><span class="n">03</span><div><h4>Cold-lead reminders</h4><p>A proactive nudge when a lead's gone quiet &mdash; before it's too late to follow up.</p></div></div>
-        <div class="feature-row"><span class="n">04</span><div><h4>Portfolio management</h4><p>Ongoing help keeping your listings current and organized.</p></div></div>
-        <div class="feature-row"><span class="n">05</span><div><h4>Listings sourced for you</h4><p>Properties, rentals, and lettings brought in from other sources on your behalf.</p></div></div>
+        <div class="feature-row"><span class="n">01</span><div><h4>Migration, handled for you</h4><p>Your existing spreadsheet or CRM export gets cleaned up and brought into Closr by a person, not a self-serve import tool you have to figure out. Day one looks like day four hundred, fully populated, not an empty board you have to build up from nothing. This is usually the single biggest reason a switch to new software gets postponed indefinitely, and here it's simply done for you.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>A real person through setup, not a ticket queue</h4><p>Getting the pipeline, the team, and the first batch of listings configured usually means weeks of trial and error, or a support ticket that sits for days. Concierge sits with you through it, so what would take weeks on your own takes days with someone who already knows the product.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Cold-lead reminders before the lead goes cold</h4><p>The most expensive leak in any pipeline isn't a lead that says no. It's the one that just goes quiet because nobody was watching closely enough to notice. A proactive nudge catches it while there's still time to save it, instead of weeks later when it's already gone to a competitor.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Portfolio upkeep that isn't competing with selling time</h4><p>Price changes, status updates, new inventory: keeping a portfolio current is real work that eats into hours an agent could spend with a client instead. Handing that upkeep off gives that time back to the people actually closing deals.</p></div></div>
+        <div class="feature-row"><span class="n">05</span><div><h4>Listings brought in, not chased down one portal at a time</h4><p>Instead of an agent checking five different sites for inventory that might fit a specific lead, rentals, lettings, and listings from other sources get sourced and added to your portfolio on your behalf.</p></div></div>
       </div>
-      <div class="callout"><p>A white-glove option alongside the self-serve product &mdash; ask your Closr contact whether it fits your team.</p></div>
+      <div class="callout"><p>A white-glove option alongside the self-serve product. If your team is migrating off a spreadsheet or another CRM, this is usually where the time savings shows up first, before the software itself even enters the picture. Ask your Closr contact whether it fits your team.</p></div>
     `;
     case "compliance": return `
       <div class="panel-head">
-        <p class="eyebrow">Security &amp; compliance</p>
+        <p class="eyebrow">Security &amp; Compliance</p>
         <h1>Trusted with client data by design</h1>
+        <p>Client financial details, contact information, and communication history are exactly the kind of data a brokerage can't afford to be careless with. These aren't settings a team has to remember to turn on. They're how the product is built.</p>
       </div>
       <div class="feature-list">
-        <div class="feature-row"><span class="n">01</span><div><h4>Encrypted everywhere</h4><p>Data encrypted at rest and in transit, no exceptions.</p></div></div>
-        <div class="feature-row"><span class="n">02</span><div><h4>Audit trail by default</h4><p>Every status change, match, and AI suggestion is logged &mdash; not just the outcome.</p></div></div>
-        <div class="feature-row"><span class="n">03</span><div><h4>Human-in-the-loop, enforced</h4><p>No AI-drafted message reaches a client without agent sign-off. Not a setting &mdash; how it's built.</p></div></div>
-        <div class="feature-row"><span class="n">04</span><div><h4>Hosting that fits your market</h4><p>US-hosted today; UK-region infrastructure available for teams that need in-region data residency.</p></div></div>
+        <div class="feature-row"><span class="n">01</span><div><h4>Encrypted everywhere</h4><p>Data encrypted at rest and in transit, no exceptions. Client information never sits in the clear, whether it's stored or moving between systems.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Audit trail by default</h4><p>Every status change, match, and AI suggestion is logged, not just the final outcome. If a broker needs to know exactly what happened on a deal and when, the record already exists instead of having to be reconstructed from memory.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Human-in-the-loop, enforced</h4><p>No AI-drafted message reaches a client without an agent's sign-off. That's not a setting someone could switch off under deadline pressure. It's built into how sending works.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Hosting that fits your market</h4><p>US-hosted today, with UK-region infrastructure available for teams that need in-region data residency, relevant for brokerages operating under UK data protection requirements.</p></div></div>
       </div>
     `;
     case "mobile": return `
       <div class="panel-head">
         <p class="eyebrow">Mobile</p>
-        <h1>Built for the field, not just the desk</h1>
-        <p>Closr's mobile app is a separate, native codebase &mdash; built for agents between showings, not a shrunk-down copy of the web app.</p>
+        <h1>The full CRM, built for between showings, not a desk</h1>
+        <p>An agent's day doesn't happen at a desk. It happens in a car, on a doorstep, between showings with spotty signal. Closr's mobile app, for iOS and Android, isn't a cut-down companion to the web product. It carries the same pipeline, leads, properties, analytics, calendar, and messaging, plus a few things a desktop browser simply can't do.</p>
       </div>
       <div class="feature-list">
-        <div class="feature-row"><span class="n">01</span><div><h4>Push-driven speed-to-lead<span class="status roadmap">Roadmap</span></h4><p>An instant push the moment a hot lead replies, with one-tap approval of an AI-drafted response.</p></div></div>
-        <div class="feature-row"><span class="n">02</span><div><h4>Offline-capable showing notes<span class="status roadmap">Roadmap</span></h4><p>Capture notes in poor-signal environments &mdash; basements, rural listings &mdash; and sync the moment you're back online.</p></div></div>
-        <div class="feature-row"><span class="n">03</span><div><h4>Voice-memo-to-note capture<span class="status roadmap">Roadmap</span></h4><p>Record a quick voice memo right after a showing, get back a structured, transcribed note.</p></div></div>
+        <div class="feature-row"><span class="n">01</span><div><h4>Capture a lead by talking, not typing</h4><p>Speak a new lead's details out loud right after a call or a doorstep conversation, and the app transcribes it and structures it into a lead automatically, budget, property type, and all. No pulling over to type into a form while the details are still fresh.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Works without signal</h4><p>Leads, properties, messages, and showings are cached on the device, so the app stays usable in a basement showing or a rural listing with no bars, and syncs automatically the moment the connection comes back.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Photos straight from a showing</h4><p>Capture property or lead photos directly from the camera on site, instead of shooting them on a phone and transferring them to a desktop later.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>A push the moment a hot lead replies</h4><p>Real-time push notifications mean a reply doesn't sit unread for hours until someone happens to open the app.</p></div></div>
+        <div class="feature-row"><span class="n">05</span><div><h4>Privacy shield</h4><p>The screen blurs automatically the moment the app is backgrounded, so client details aren't visible on a phone left face-up on a car seat or a desk.</p></div></div>
+        <div class="feature-row"><span class="n">06</span><div><h4>Team and billing, without opening a laptop</h4><p>Manage team members and your account plan directly from the app. Nothing about running the business requires switching to a desktop.</p></div></div>
       </div>
-      <div class="callout"><p>The mobile app lives in its own codebase, so it isn't part of this particular walkthrough &mdash; ask your Closr contact for a live look.</p></div>
+      <div class="callout"><p>All of this ships in the same app as the core pipeline, not a separate download. Ask your Closr contact for access to try it.</p></div>
     `;
     case "roadmap": return roadmapHTML();
   }
@@ -387,18 +401,58 @@ function panelHTML(id) {
 
 function roadmapHTML() {
   const phases = [
-    { num: "0", title: "Foundation", when: "In progress", goal: "Consolidating on one name, one codebase, closing early security gaps &mdash; the groundwork before building further.", items: ["One name, one brand, everywhere it shows up", "Consolidated codebase across web, backend, and mobile", "CI-enforced security hygiene (dependency scanning, secrets detection)"] },
-    { num: "1", title: "Growth infrastructure", when: "Near-term", goal: "The self-serve funnel the product needs to grow without a sales team doing every signup by hand.", items: ["A real marketing site, built around the actual buyer", "Trial and pricing that fit a commission-based income rhythm", "A referral program and lightweight integrations (Zapier/Make)"] },
-    { num: "2", title: "Core product depth", when: "Near-term", goal: "Feeding the matching engine from both sides &mdash; more leads in, more inventory to match against &mdash; then surfacing it everywhere.", items: ["Automated lead ingestion from major portals", "MLS/IDX property sync", "Match scores and explanations surfaced directly on leads and listings", "A team/brokerage tier with routing and commission tracking"] },
-    { num: "3", title: "AI &amp; voice layer", when: "Mid-term", goal: "A native voice channel &mdash; real estate runs on phone calls, and today none of that is visible to the CRM.", items: ["Inbound/outbound calling with recording and consent handling", "Call transcription and summaries", "Draft-and-approve follow-ups after every call", "Broker-level coaching insights from the same call data"] },
-    { num: "4", title: "Mobile &amp; field experience", when: "Ongoing, in parallel", goal: "Surfacing everything above where an agent actually is &mdash; between showings, not at a desk.", items: ["Push-driven speed-to-lead with one-tap approval", "Offline-capable showing notes", "Voice-memo-to-note capture"] },
-    { num: "5", title: "Scale &amp; ecosystem", when: "Longer-term", goal: "Extending outward into the rest of an agent's toolchain once the core loop is proven.", items: ["An integrations marketplace (DocuSign, transaction management, accounting)", "Multi-market and multi-MLS expansion", "A white-label tier for larger brokerages"] },
+    {
+      num: "1", title: "Growth infrastructure", when: "Near-term",
+      goal: "A real marketing presence and a pricing model that fits how agents actually get paid, so growing the team doesn't depend on word of mouth alone.",
+      items: [
+        ["A real marketing site, built around the actual buyer", "Right now finding and evaluating Closr is harder than it should be. A proper site means a broker can send a partner or a new hire a link instead of a screen-share."],
+        ["Trial and pricing that fit a commission-based income rhythm", "A generic 14-day trial ignores how real estate income actually works. Pricing built around it means a new agency isn't forced to commit before a single deal has closed."],
+        ["A referral program and lightweight integrations (Zapier, Make)", "Agents already talk to other agents. A referral path turns that into growth, and simple integrations mean Closr can slot into whatever else your team already uses instead of requiring a full switch."],
+      ],
+    },
+    {
+      num: "2", title: "Core product depth", when: "Near-term",
+      goal: "Feeding the matching engine from both sides, more leads in, more inventory to match against, so the automatic matching you've already seen gets sharper over time.",
+      items: [
+        ["Automated lead ingestion from major portals", "Instead of copying names out of five different portal alerts every morning, leads from Zillow, Realtor.com, and Facebook/Instagram lead ads land directly in the pipeline, already deduplicated."],
+        ["MLS/IDX property sync", "Portfolio inventory stays current automatically instead of depending on someone remembering to hand-enter every new listing."],
+        ["A feedback loop on match quality", "Agents flag whether a suggested match was actually a good one, so the matching engine gets better at your market specifically, not just in general."],
+        ["A team and brokerage tier with routing and commission tracking", "Lead routing rules and commission-split tracking extend the broker-level visibility already in the product today, built for agencies that are scaling past a handful of agents."],
+      ],
+    },
+    {
+      num: "3", title: "AI voice layer", when: "Mid-term",
+      goal: "A native phone channel. Real estate runs on calls, and right now none of that conversation is visible to the CRM once the call ends.",
+      items: [
+        ["Inbound and outbound calling, with recording and consent handling", "Calls happen inside the same record as everything else, with consent handling built in from the start rather than bolted on later."],
+        ["Call transcription and summaries", "A recap and action items land in the pipeline automatically after every call, so nothing said on the phone gets lost the moment it ends."],
+        ["Draft-and-approve follow-ups after every call", "A suggested next message, based on what was actually discussed, waiting for the agent to review and send."],
+        ["Broker-level coaching insights from the same call data", "Talk-time ratios and objection patterns surfaced to a broker or team lead, using data that already exists instead of asking agents to self-report."],
+      ],
+    },
+    {
+      num: "4", title: "Mobile, next steps", when: "Ongoing, in parallel",
+      goal: "The mobile app already covers voice-to-lead capture, offline access, and push notifications today. These are the next layer on top of that.",
+      items: [
+        ["Biometric login", "Faster, more secure access in the field than typing a password on a touchscreen between appointments."],
+        ["Location-aware showing check-ins", "A showing that logs itself the moment an agent arrives on site, one less thing to remember to do manually after a long day."],
+      ],
+    },
+    {
+      num: "5", title: "Scale and ecosystem", when: "Longer-term",
+      goal: "Extending outward into the rest of an agency's toolchain once the core pipeline is proven at your scale.",
+      items: [
+        ["An integrations marketplace (DocuSign, transaction management, accounting)", "Contract, transaction, and commission data stop living in three disconnected tools that all need the same information typed in three times."],
+        ["Multi-market and multi-MLS expansion", "Support for agencies operating across more than one market or MLS board, without splitting the pipeline across separate tools."],
+        ["A white-label tier for larger brokerages", "A brokerage-branded instance for larger accounts that want the product under their own name."],
+      ],
+    },
   ];
   return `
     <div class="panel-head">
       <p class="eyebrow">Roadmap</p>
       <h1>Where Closr is headed</h1>
-      <p>Built for the independent agent first, not retrofitted from an enterprise tool. Six phases, roughly two quarters out.</p>
+      <p>Built for the independent agent and the growing agency first, not retrofitted from an enterprise tool nobody in real estate actually asked for.</p>
     </div>
     ${phases.map(p => `
       <div class="phase">
@@ -408,7 +462,7 @@ function roadmapHTML() {
           <span class="phase-when">${p.when}</span>
         </div>
         <p class="phase-goal">${p.goal}</p>
-        <ul>${p.items.map(it => `<li>${it}</li>`).join("")}</ul>
+        <ul>${p.items.map(([title, why]) => `<li><b>${title}.</b> ${why}</li>`).join("")}</ul>
       </div>
     `).join("")}
   `;
