@@ -399,11 +399,12 @@ function roadmapHTML() {
   const phases = [
     {
       num: "1", title: "Growth infrastructure", when: "Near-term",
-      goal: "A real marketing presence and easier ways for agents to bring their own network in, so growing the team doesn't depend on word of mouth alone.",
+      goal: "Easier ways for agents to bring their own network in and capture a lead the moment someone shows interest, so growing the team doesn't depend on word of mouth alone.",
       items: [
-        ["A real marketing site, built around the actual buyer", "Right now finding and evaluating Closr is harder than it should be. A proper site means a broker can send a partner or a new hire a link instead of a screen-share, with real answers to the questions an agency actually asks before switching tools."],
         ["A referral program", "Agents already talk to other agents, and word of mouth is how most agencies actually pick a CRM. A structured referral path turns that existing behavior into growth, instead of leaving it to chance."],
         ["Lightweight integrations (Zapier, Make)", "Most agencies already run a small stack of other tools around their CRM. Simple integrations mean Closr can slot into whatever else your team uses today, transaction management, email marketing, accounting, instead of requiring a full switch away from any of it."],
+        ["Drag-and-drop intake forms for the web", "A buyer or seller form an agency builds itself in minutes, not a developer ticket, with fields that adjust automatically depending on which one they're filling out, and every submission tagged with where it came from so marketing spend can be judged by what it actually produced."],
+        ["A digital business card that captures the lead on the spot", "A phone-scannable card replaces the paper card that usually ends up in the trash. Someone scans it, gets the agent's contact details, and the scan itself creates a tagged lead automatically, no second step required."],
       ],
     },
     {
@@ -413,17 +414,22 @@ function roadmapHTML() {
         ["Automated lead ingestion from major portals", "Instead of copying names out of five different portal alerts every morning, leads from Zillow and Realtor.com in the US, Zoopla in the UK, plus Facebook and Instagram lead ads, land directly in the pipeline, already deduplicated against existing leads so nobody works the same inquiry twice."],
         ["MLS/IDX property sync in the US, Zoopla and Rightmove feeds in the UK", "Portfolio inventory stays current automatically on both sides of the Atlantic, instead of depending on someone remembering to hand-enter every new listing or rekey it for a second market."],
         ["Lettings and rentals support for the UK market", "UK agencies run lettings alongside sales as a core part of the business, not a side case. Bringing rental and letting inventory into the same portfolio and matching engine as sales listings means a UK agency isn't forced into a separate tool just to manage that half of the book."],
+        ["One contact record, even when someone is buying and selling at once", "A person selling their current home while buying the next one is common, and today that usually means two disconnected records with no shared history. One contact tied to multiple concurrent deals means the full picture, every conversation and every deal, stays together automatically."],
+        ["A pipeline that keeps going after a deal is won", "Today the pipeline effectively ends at Converted. Real deals don't: there's still earnest money, inspection, appraisal, loan approval, final walkthrough, and closing before funding actually happens. Tracking a deal through each of those stages, with its own buyer, seller, or escrow-specific pipeline, means nothing falls through the cracks between an accepted offer and getting paid."],
         ["A feedback loop on match quality", "Agents flag whether a suggested match was actually a good one, so the matching engine gets better at your specific market, price band, and inventory mix, not just in general."],
         ["A team and brokerage tier with routing and commission tracking", "Lead routing rules and commission-split tracking extend the broker-level visibility already in the product today, built for agencies that are scaling past a handful of agents and need rules, not manual reassignment, to keep leads flowing to the right person."],
       ],
     },
     {
-      num: "3", title: "AI voice layer", when: "Mid-term",
-      goal: "A native phone channel. Real estate runs on calls, and right now none of that conversation is visible to the CRM once the call ends.",
+      num: "3", title: "AI, automation, and WhatsApp", when: "Mid-term",
+      goal: "The parts of the job that are repetitive rather than judgment-heavy, handled automatically, and a real phone and WhatsApp presence inside the CRM instead of a workflow that lives outside it entirely.",
       items: [
+        ["A no-code automation engine", "Simple rules an agency sets up itself: when a lead goes quiet for a set number of days, when a stage changes, when a price drops, trigger a WhatsApp, SMS, email, task, or push notification automatically. No developer needed to wire it up, and no lead sits untouched just because nobody remembered to check."],
+        ["Dormant leads, reactivated automatically", "A lead marked lost or gone cold is usually just filed away for good, even though the reason they said no (wrong price, wrong inventory) can change. Matching dormant contacts against new listings and price drops, and surfacing the ones worth a second look, turns leads an agency already paid for back into active opportunities instead of writing them off permanently."],
+        ["A daily AI briefing", "One short morning readout of what actually needs attention: hot signals, stalled high-value deals, and the handful of actions likely to move the most revenue that day. Built to replace scrolling the whole pipeline every morning trying to guess what matters."],
         ["Inbound and outbound calling, with recording and consent handling", "Calls happen inside the same record as everything else, with consent handling built in from the start rather than bolted on later."],
         ["Call transcription and summaries", "A recap and action items land in the pipeline automatically after every call, so nothing said on the phone gets lost the moment it ends."],
-        ["Draft-and-approve follow-ups after every call", "A suggested next message, based on what was actually discussed, waiting for the agent to review and send."],
+        ["WhatsApp as a full channel, not just a link out", "In markets where WhatsApp is how business actually gets done, a rich property card with a self-service booking link sent straight in WhatsApp lets a buyer pick a showing time without back-and-forth, and the deal advances on the pipeline the moment they do."],
         ["Broker-level coaching insights from the same call data", "Talk-time ratios and objection patterns surfaced to a broker or team lead, using data that already exists instead of asking agents to self-report."],
       ],
     },
@@ -433,14 +439,17 @@ function roadmapHTML() {
       items: [
         ["Biometric login", "Faster, more secure access in the field than typing a password on a touchscreen between appointments."],
         ["Location-aware showing check-ins", "A showing that logs itself the moment an agent arrives on site, one less thing to remember to do manually after a long day."],
+        ["An optimized route for the day's showings", "Instead of driving to each showing in the order they got booked, the app sequences today's scattered appointments into one optimized route from the agent's live location, so a full day of showings costs less time behind the wheel and more time in front of clients."],
+        ["Quick replies for the questions agents field constantly", "HOA fees, directions, a video tour link, the application link: the same handful of questions come up dozens of times a day. A one-tap reply chip fires the right prewritten answer straight into a WhatsApp or SMS thread instead of retyping it every time."],
       ],
     },
     {
       num: "5", title: "Scale and ecosystem", when: "Longer-term",
-      goal: "Extending outward into the rest of an agency's toolchain once the core pipeline is proven at your scale.",
+      goal: "Extending outward into the rest of an agency's toolchain and its own marketing reach, once the core pipeline is proven at your scale.",
       items: [
         ["An integrations marketplace (DocuSign, transaction management, accounting)", "Contract, transaction, and commission data stop living in three disconnected tools that all need the same information typed in three times."],
         ["Multi-market and multi-MLS expansion", "Support for agencies operating across more than one market or MLS board, without splitting the pipeline across separate tools."],
+        ["Branded social listings, generated automatically", "Turning a listing into an agent-branded, ready-to-post social story, with a lead-capture QR code already on it, without opening a design tool or waiting on a marketing team."],
         ["A white-label tier for larger brokerages", "A brokerage-branded instance for larger accounts that want the product under their own name."],
       ],
     },
