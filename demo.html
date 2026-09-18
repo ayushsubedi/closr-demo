@@ -38,9 +38,6 @@
     gap: 16px; flex-wrap: wrap;
   }
   .logo { height: 28px; width: auto; display: block; }
-  header.top p {
-    margin: 0; font-size: 13px; color: var(--ink-muted); font-weight: 600;
-  }
 
   nav.tabs {
     position: sticky; top: 61px; z-index: 19;
@@ -184,7 +181,6 @@
       <g transform="translate(439.525348, 99.52637)"><path d="M 32.125 -27.59375 C 31.0625 -27.519531 29.921875 -27.484375 28.703125 -27.484375 C 27.492188 -27.484375 25.703125 -27.570312 23.328125 -27.75 L 23.328125 0 L 9.171875 0 L 9.171875 -71.359375 C 14.160156 -71.992188 20.28125 -72.3125 27.53125 -72.3125 C 37.425781 -72.3125 44.800781 -70.488281 49.65625 -66.84375 C 54.507812 -63.195312 56.9375 -57.566406 56.9375 -49.953125 C 56.9375 -44.046875 54.710938 -38.992188 50.265625 -34.796875 C 48.804688 -33.441406 47.132812 -32.265625 45.25 -31.265625 L 56.140625 -8.328125 C 58.273438 -3.597656 59.910156 -0.785156 61.046875 0.109375 L 60.78125 0.375 C 57.332031 -0.195312 51.910156 -0.179688 44.515625 0.421875 Z M 28.546875 -59.71875 C 26.734375 -59.71875 24.992188 -59.628906 23.328125 -59.453125 L 23.328125 -39.0625 C 25.066406 -38.8125 27.109375 -38.6875 29.453125 -38.6875 C 31.804688 -38.6875 33.78125 -38.890625 35.375 -39.296875 C 36.976562 -39.710938 38.367188 -40.347656 39.546875 -41.203125 C 42.066406 -43.085938 43.328125 -45.914062 43.328125 -49.6875 C 43.328125 -53.457031 42.015625 -56.109375 39.390625 -57.640625 C 36.929688 -59.023438 33.316406 -59.71875 28.546875 -59.71875 Z M 28.546875 -59.71875 "/></g>
     </g>
   </svg>
-  <p>Built for the day-to-day of running a brokerage, not a slide deck</p>
 </header>
 
 <nav class="tabs" id="tabs"></nav>
@@ -403,21 +399,22 @@ function roadmapHTML() {
   const phases = [
     {
       num: "1", title: "Growth infrastructure", when: "Near-term",
-      goal: "A real marketing presence and a pricing model that fits how agents actually get paid, so growing the team doesn't depend on word of mouth alone.",
+      goal: "A real marketing presence and easier ways for agents to bring their own network in, so growing the team doesn't depend on word of mouth alone.",
       items: [
-        ["A real marketing site, built around the actual buyer", "Right now finding and evaluating Closr is harder than it should be. A proper site means a broker can send a partner or a new hire a link instead of a screen-share."],
-        ["Trial and pricing that fit a commission-based income rhythm", "A generic 14-day trial ignores how real estate income actually works. Pricing built around it means a new agency isn't forced to commit before a single deal has closed."],
-        ["A referral program and lightweight integrations (Zapier, Make)", "Agents already talk to other agents. A referral path turns that into growth, and simple integrations mean Closr can slot into whatever else your team already uses instead of requiring a full switch."],
+        ["A real marketing site, built around the actual buyer", "Right now finding and evaluating Closr is harder than it should be. A proper site means a broker can send a partner or a new hire a link instead of a screen-share, with real answers to the questions an agency actually asks before switching tools."],
+        ["A referral program", "Agents already talk to other agents, and word of mouth is how most agencies actually pick a CRM. A structured referral path turns that existing behavior into growth, instead of leaving it to chance."],
+        ["Lightweight integrations (Zapier, Make)", "Most agencies already run a small stack of other tools around their CRM. Simple integrations mean Closr can slot into whatever else your team uses today, transaction management, email marketing, accounting, instead of requiring a full switch away from any of it."],
       ],
     },
     {
       num: "2", title: "Core product depth", when: "Near-term",
-      goal: "Feeding the matching engine from both sides, more leads in, more inventory to match against, so the automatic matching you've already seen gets sharper over time.",
+      goal: "Feeding the matching engine from both sides, more leads in, more inventory to match against, across both the US and UK markets, so the automatic matching you've already seen gets sharper and covers more ground over time.",
       items: [
-        ["Automated lead ingestion from major portals", "Instead of copying names out of five different portal alerts every morning, leads from Zillow, Realtor.com, and Facebook/Instagram lead ads land directly in the pipeline, already deduplicated."],
-        ["MLS/IDX property sync", "Portfolio inventory stays current automatically instead of depending on someone remembering to hand-enter every new listing."],
-        ["A feedback loop on match quality", "Agents flag whether a suggested match was actually a good one, so the matching engine gets better at your market specifically, not just in general."],
-        ["A team and brokerage tier with routing and commission tracking", "Lead routing rules and commission-split tracking extend the broker-level visibility already in the product today, built for agencies that are scaling past a handful of agents."],
+        ["Automated lead ingestion from major portals", "Instead of copying names out of five different portal alerts every morning, leads from Zillow and Realtor.com in the US, Zoopla in the UK, plus Facebook and Instagram lead ads, land directly in the pipeline, already deduplicated against existing leads so nobody works the same inquiry twice."],
+        ["MLS/IDX property sync in the US, Zoopla and Rightmove feeds in the UK", "Portfolio inventory stays current automatically on both sides of the Atlantic, instead of depending on someone remembering to hand-enter every new listing or rekey it for a second market."],
+        ["Lettings and rentals support for the UK market", "UK agencies run lettings alongside sales as a core part of the business, not a side case. Bringing rental and letting inventory into the same portfolio and matching engine as sales listings means a UK agency isn't forced into a separate tool just to manage that half of the book."],
+        ["A feedback loop on match quality", "Agents flag whether a suggested match was actually a good one, so the matching engine gets better at your specific market, price band, and inventory mix, not just in general."],
+        ["A team and brokerage tier with routing and commission tracking", "Lead routing rules and commission-split tracking extend the broker-level visibility already in the product today, built for agencies that are scaling past a handful of agents and need rules, not manual reassignment, to keep leads flowing to the right person."],
       ],
     },
     {
