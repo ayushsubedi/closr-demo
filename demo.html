@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Closr Product Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1d7fc3;
+    --primary-lite: #c6dff0;
+    --secondary: #ff8800;
+    --ink: #15171a;
+    --ink-muted: #5c6167;
+    --paper: #f9fafb;
+    --surface: #ffffff;
+    --line: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--primary); }
+  img, video { max-width: 100%; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .wordmark { font-weight: 800; font-size: 20px; letter-spacing: 0.02em; }
+  .wordmark span { color: var(--secondary); }
+  header.top p {
+    margin: 0; font-size: 13px; color: var(--ink-muted); font-weight: 600;
+  }
+
+  nav.tabs {
+    position: sticky; top: 61px; z-index: 19;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    display: flex; gap: 4px; overflow-x: auto;
+    padding: 0 16px;
+    scrollbar-width: thin;
+  }
+  nav.tabs button {
+    appearance: none; border: none; background: none; cursor: pointer;
+    font-family: inherit; font-weight: 700; font-size: 13px;
+    color: var(--ink-muted);
+    padding: 14px 14px 12px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 120ms ease, border-color 120ms ease;
+  }
+  nav.tabs button:hover { color: var(--ink); }
+  nav.tabs button[aria-selected="true"] {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .panel-head { margin-bottom: 28px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--primary); margin: 0 0 6px;
+  }
+  .panel-head h1 {
+    font-size: 28px; font-weight: 800; letter-spacing: -0.01em;
+    margin: 0 0 8px; text-wrap: balance;
+  }
+  .panel-head p {
+    font-size: 15px; line-height: 1.6; color: var(--ink-muted);
+    margin: 0; max-width: 62ch;
+  }
+
+  .clip { margin-bottom: 40px; }
+  .clip:last-child { margin-bottom: 0; }
+  .clip h3 {
+    font-size: 14px; font-weight: 700; margin: 0 0 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .clip h3::before {
+    content: ""; width: 8px; height: 8px; border-radius: 2px;
+    background: var(--primary); flex-shrink: 0;
+  }
+  .clip video {
+    width: 100%; display: block;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: #000;
+  }
+  .clip p.cap {
+    margin: 8px 0 0; font-size: 13px; color: var(--ink-muted); line-height: 1.5;
+  }
+
+  /* explain-only content */
+  .feature-list { display: flex; flex-direction: column; }
+  .feature-row {
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+    padding: 18px 0; border-top: 1px solid var(--line);
+  }
+  .feature-row:first-child { border-top: none; padding-top: 0; }
+  .feature-row .n { font-size: 12px; font-weight: 700; color: #9ca3af; padding-top: 2px; }
+  .feature-row h4 { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+  .feature-row p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--ink-muted); max-width: 58ch; }
+  .status {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 4px; margin-left: 8px; vertical-align: middle;
+  }
+  .status.shipped { background: #e8f7ee; color: #16a34a; }
+  .status.roadmap { background: #fff4e5; color: var(--secondary); }
+
+  .grid3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+  }
+  .grid3 .cell {
+    padding: 18px; border-left: 1px solid var(--line);
+  }
+  .grid3 .cell:nth-child(3n+1) { border-left: none; }
+  .grid3 .letter { font-size: 22px; font-weight: 800; color: var(--primary); }
+  .grid3 h4 { margin: 8px 0 4px; font-size: 13px; font-weight: 700; }
+  .grid3 p { margin: 0; font-size: 12px; line-height: 1.5; color: var(--ink-muted); }
+  @media (max-width: 640px) {
+    .grid3 { grid-template-columns: 1fr; }
+    .grid3 .cell { border-left: none; border-top: 1px solid var(--line); }
+    .grid3 .cell:first-child { border-top: none; }
+  }
+
+  .callout {
+    background: var(--surface); border: 1px solid var(--line);
+    border-left: 3px solid var(--primary); border-radius: 6px;
+    padding: 16px 18px; margin-top: 24px;
+  }
+  .callout p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--ink-muted); }
+
+  /* roadmap */
+  .phase { margin-bottom: 32px; }
+  .phase-head {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 14px;
+  }
+  .phase-num {
+    font-size: 11px; font-weight: 800; background: var(--ink); color: #fff;
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .phase-head h3 { margin: 0; font-size: 18px; font-weight: 800; flex: 1; }
+  .phase-when { font-size: 11px; font-weight: 700; color: var(--ink-muted); white-space: nowrap; }
+  .phase-goal { margin: 0 0 14px; font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; max-width: 62ch; }
+  .phase ul { margin: 0; padding-left: 18px; }
+  .phase li { font-size: 13.5px; color: var(--ink); line-height: 1.7; }
+  .phase li b { font-weight: 700; }
+
+  @media (max-width: 480px) {
+    header.top { padding: 14px 16px; }
+    main { padding: 24px 14px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wordmark">CLOSR<span>.</span></div>
+  <p>Product walkthrough &mdash; every screen, captured live</p>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<main id="panels"></main>
+
+<script>
+const TABS = [
+  { id: "lead-gen", label: "Lead Gen" },
+  { id: "pipeline", label: "Pipeline" },
+  { id: "lead-mgmt", label: "Lead Management" },
+  { id: "properties", label: "Properties & Matching" },
+  { id: "calendar", label: "Calendar & Scheduling" },
+  { id: "team", label: "Team" },
+  { id: "analytics", label: "Analytics" },
+  { id: "messaging", label: "Messaging & AI" },
+  { id: "scoring", label: "LPMAMA Scoring" },
+  { id: "concierge", label: "Concierge Service" },
+  { id: "compliance", label: "Compliance & Hosting" },
+  { id: "mobile", label: "Mobile" },
+  { id: "roadmap", label: "Roadmap" },
+];
+
+const tabsEl = document.getElementById("tabs");
+const panelsEl = document.getElementById("panels");
+
+TABS.forEach((t, i) => {
+  const btn = document.createElement("button");
+  btn.textContent = t.label;
+  btn.setAttribute("role", "tab");
+  btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  btn.addEventListener("click", () => selectTab(t.id));
+  btn.id = "tabbtn-" + t.id;
+  tabsEl.appendChild(btn);
+});
+
+const POSTERS = {
+  "create-lead": "02-requirements-filled.png",
+  "dashboard-tour": "01-board-overview.png",
+  "drag-pipeline": "02-after-drag.png",
+  "lead-detail": "01-lead-detail-top.png",
+  "edit-lead": "02-budget-updated.png",
+  "assign-agent": "03-agent-assigned.png",
+  "analytics": "01-analytics-top.png",
+  "team-roster": "01-team-roster.png",
+  "properties-browse": "01-portfolio-grid.png",
+  "create-property": "06-portfolio-with-new-listing.png",
+  "property-detail": "01-property-detail-top.png",
+  "property-matching": "01-matched-properties.png",
+  "schedule-showing": "02-step2-date-details.png",
+  "calendar-view": "01-calendar-month.png",
+  "compose-message": "03-ai-draft-ready.png",
+};
+
+function clip(slug, title, caption) {
+  const poster = `${slug}/screens/${POSTERS[slug]}`;
+  return `
+    <div class="clip">
+      <h3>${title}</h3>
+      <video controls preload="metadata" poster="${poster}" playsinline muted>
+        <source src="${slug}/video.mp4" type="video/mp4">
+      </video>
+      <p class="cap">${caption}</p>
+    </div>`;
+}
+
+function panelHTML(id) {
+  switch (id) {
+    case "lead-gen": return `
+      <div class="panel-head">
+        <p class="eyebrow">Lead Gen</p>
+        <h1>Add a lead in seconds</h1>
+        <p>Name, budget, property type, and a real address lookup &mdash; not a stub. Every lead lands straight in the pipeline.</p>
+      </div>
+      ${clip("create-lead", "Creating a lead", "Full intake form: identity, budget, property type, live address search.")}
+    `;
+    case "pipeline": return `
+      <div class="panel-head">
+        <p class="eyebrow">Pipeline</p>
+        <h1>Every lead, staged by how close it is to closing</h1>
+        <p>A board built around the 9-stage pipeline, from New through Converted &mdash; filterable, and built for drag-and-drop.</p>
+      </div>
+      ${clip("dashboard-tour", "The pipeline board", "Filter stages, switch between full and compact views.")}
+      ${clip("drag-pipeline", "Moving a deal forward", "A real drag between pipeline stages, with the app's own confirmation.")}
+    `;
+    case "lead-mgmt": return `
+      <div class="panel-head">
+        <p class="eyebrow">Lead Management</p>
+        <h1>Everything about a lead, in one place</h1>
+        <p>Contact info, requirements, matched properties, reminders, and history &mdash; update any of it without leaving the page.</p>
+      </div>
+      ${clip("lead-detail", "Lead detail view", "Contact info, requirements, and follow-up tools together.")}
+      ${clip("edit-lead", "Editing a lead", "The same intake form, pre-filled, for keeping details current.")}
+      ${clip("assign-agent", "Assigning ownership", "Search the team and assign a lead in one click.")}
+      <div class="callout"><p>Contact info (email, phone) lives directly on the lead record &mdash; there's no separate "Contacts" list to maintain in parallel.</p></div>
+    `;
+    case "properties": return `
+      <div class="panel-head">
+        <p class="eyebrow">Properties &amp; Matching</p>
+        <h1>A portfolio that works both directions</h1>
+        <p>List a property once, and it's checked against every lead's requirements &mdash; the same way a lead is checked against every listing.</p>
+      </div>
+      ${clip("properties-browse", "Browsing the portfolio", "Search and sort across every active listing.")}
+      ${clip("create-property", "Listing a property", "Basic info, pricing, the same address lookup as leads, and a photo gallery.")}
+      ${clip("property-matching", "The matching engine", "Every lead is checked against your listings automatically.")}
+      ${clip("property-detail", "Property detail view", "Price, photos, and the full description in one view.")}
+    `;
+    case "calendar": return `
+      <div class="panel-head">
+        <p class="eyebrow">Calendar &amp; Scheduling</p>
+        <h1>Book a showing without leaving the lead</h1>
+        <p>Pick a property, set the date and time &mdash; with quick shortcuts for the common cases &mdash; and it's on the shared calendar.</p>
+      </div>
+      ${clip("schedule-showing", "Scheduling a showing", "Property picker, then date, time, and duration.")}
+      ${clip("calendar-view", "The showings calendar", "Every showing across every lead, month by month.")}
+    `;
+    case "team": return `
+      <div class="panel-head">
+        <p class="eyebrow">Team</p>
+        <h1>Everyone on the team, one roster</h1>
+        <p>Roles and status for every member, with lead assignment built directly into the pipeline.</p>
+      </div>
+      ${clip("team-roster", "Team roster", "Members, roles, and status at a glance.")}
+    `;
+    case "analytics": return `
+      <div class="panel-head">
+        <p class="eyebrow">Analytics</p>
+        <h1>Know your numbers, not just your gut</h1>
+        <p>Lead volume, hotness distribution, pipeline mix, and trends over time &mdash; built on the same data as the board.</p>
+      </div>
+      ${clip("analytics", "Analytics dashboard", "Totals, hotness distribution, and trends over time.")}
+    `;
+    case "messaging": return `
+      <div class="panel-head">
+        <p class="eyebrow">Messaging &amp; AI</p>
+        <h1>Drafting emails is the least of it</h1>
+        <p>AI runs through the whole pipeline &mdash; always with a human between it and your client.</p>
+      </div>
+      ${clip("compose-message", "Composing a message", "An AI-drafted starting point, reviewed before it's ever sent.")}
+      <div class="feature-list" style="margin-top:8px;">
+        <div class="feature-row"><span class="n">01</span><div><h4>Draft replies<span class="status shipped">Shown above</span></h4><p>Email and SMS, in your voice, ready to send &mdash; not a canned template.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Call transcripts &amp; summaries<span class="status roadmap">Roadmap</span></h4><p>Every call recapped with action items filed straight into the pipeline.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Qualification assist<span class="status roadmap">Roadmap</span></h4><p>LPMAMA signals pulled from the actual conversation, not just a form.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Smart scheduling<span class="status roadmap">Roadmap</span></h4><p>Showings proposed and booked around both calendars automatically.</p></div></div>
+        <div class="feature-row"><span class="n">05</span><div><h4>Market briefs<span class="status roadmap">Roadmap</span></h4><p>A quick comp summary drafted before every listing appointment.</p></div></div>
+        <div class="feature-row"><span class="n">06</span><div><h4>Urgency detection<span class="status roadmap">Roadmap</span></h4><p>Flags a cooling lead before it goes cold, not after.</p></div></div>
+      </div>
+    `;
+    case "scoring": return `
+      <div class="panel-head">
+        <p class="eyebrow">Scoring engine</p>
+        <h1>Real-time LPMAMA scoring</h1>
+        <p>Six qualification dimensions, drawn from the real estate industry's standard LPMAMA framework, evaluated continuously into one live score &mdash; the number you see on every lead card and in analytics. Rules-based and explainable, not a generative-AI guess.</p>
+      </div>
+      <div class="grid3">
+        <div class="cell"><div class="letter">L</div><h4>Location</h4><p>Specific neighborhood preference, or open to anything.</p></div>
+        <div class="cell"><div class="letter">P</div><h4>Price</h4><p>A narrow, certain budget scores far higher than a wide, unsure one.</p></div>
+        <div class="cell"><div class="letter">M</div><h4>Motivation</h4><p>Urgency is one of the strongest signals.</p></div>
+        <div class="cell"><div class="letter">A</div><h4>Agent status</h4><p>Already working with another agent, or a real open opportunity.</p></div>
+        <div class="cell"><div class="letter">M</div><h4>Mortgage</h4><p>Cash buyer or pre-approved moves fast.</p></div>
+        <div class="cell"><div class="letter">A</div><h4>Appointment</h4><p>A booked viewing is the single strongest signal.</p></div>
+      </div>
+      <div class="callout"><p>The single aggregate score is visible today throughout Lead Management and Analytics; a per-dimension breakdown view is not yet part of the product.</p></div>
+    `;
+    case "concierge": return `
+      <div class="panel-head">
+        <p class="eyebrow">Concierge Service</p>
+        <h1>Moving off a spreadsheet, without doing it alone</h1>
+        <p>A managed onboarding option for teams who want a hand making the switch &mdash; not just software, a team behind it.</p>
+      </div>
+      <div class="feature-list">
+        <div class="feature-row"><span class="n">01</span><div><h4>Migration, handled</h4><p>Your existing spreadsheet or CRM export, brought into Closr for you &mdash; not a DIY import.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Hands-on through every journey</h4><p>Help setting up your pipeline, your team, and your first listings, not just a support inbox.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Cold-lead reminders</h4><p>A proactive nudge when a lead's gone quiet &mdash; before it's too late to follow up.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Portfolio management</h4><p>Ongoing help keeping your listings current and organized.</p></div></div>
+        <div class="feature-row"><span class="n">05</span><div><h4>Listings sourced for you</h4><p>Properties, rentals, and lettings brought in from other sources on your behalf.</p></div></div>
+      </div>
+      <div class="callout"><p>A white-glove option alongside the self-serve product &mdash; ask your Closr contact whether it fits your team.</p></div>
+    `;
+    case "compliance": return `
+      <div class="panel-head">
+        <p class="eyebrow">Security &amp; compliance</p>
+        <h1>Trusted with client data by design</h1>
+      </div>
+      <div class="feature-list">
+        <div class="feature-row"><span class="n">01</span><div><h4>Encrypted everywhere</h4><p>Data encrypted at rest and in transit, no exceptions.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Audit trail by default</h4><p>Every status change, match, and AI suggestion is logged &mdash; not just the outcome.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Human-in-the-loop, enforced</h4><p>No AI-drafted message reaches a client without agent sign-off. Not a setting &mdash; how it's built.</p></div></div>
+        <div class="feature-row"><span class="n">04</span><div><h4>Hosting that fits your market</h4><p>US-hosted today; UK-region infrastructure available for teams that need in-region data residency.</p></div></div>
+      </div>
+    `;
+    case "mobile": return `
+      <div class="panel-head">
+        <p class="eyebrow">Mobile</p>
+        <h1>Built for the field, not just the desk</h1>
+        <p>Closr's mobile app is a separate, native codebase &mdash; built for agents between showings, not a shrunk-down copy of the web app.</p>
+      </div>
+      <div class="feature-list">
+        <div class="feature-row"><span class="n">01</span><div><h4>Push-driven speed-to-lead<span class="status roadmap">Roadmap</span></h4><p>An instant push the moment a hot lead replies, with one-tap approval of an AI-drafted response.</p></div></div>
+        <div class="feature-row"><span class="n">02</span><div><h4>Offline-capable showing notes<span class="status roadmap">Roadmap</span></h4><p>Capture notes in poor-signal environments &mdash; basements, rural listings &mdash; and sync the moment you're back online.</p></div></div>
+        <div class="feature-row"><span class="n">03</span><div><h4>Voice-memo-to-note capture<span class="status roadmap">Roadmap</span></h4><p>Record a quick voice memo right after a showing, get back a structured, transcribed note.</p></div></div>
+      </div>
+      <div class="callout"><p>The mobile app lives in its own codebase, so it isn't part of this particular walkthrough &mdash; ask your Closr contact for a live look.</p></div>
+    `;
+    case "roadmap": return roadmapHTML();
+  }
+}
+
+function roadmapHTML() {
+  const phases = [
+    { num: "0", title: "Foundation", when: "In progress", goal: "Consolidating on one name, one codebase, closing early security gaps &mdash; the groundwork before building further.", items: ["One name, one brand, everywhere it shows up", "Consolidated codebase across web, backend, and mobile", "CI-enforced security hygiene (dependency scanning, secrets detection)"] },
+    { num: "1", title: "Growth infrastructure", when: "Near-term", goal: "The self-serve funnel the product needs to grow without a sales team doing every signup by hand.", items: ["A real marketing site, built around the actual buyer", "Trial and pricing that fit a commission-based income rhythm", "A referral program and lightweight integrations (Zapier/Make)"] },
+    { num: "2", title: "Core product depth", when: "Near-term", goal: "Feeding the matching engine from both sides &mdash; more leads in, more inventory to match against &mdash; then surfacing it everywhere.", items: ["Automated lead ingestion from major portals", "MLS/IDX property sync", "Match scores and explanations surfaced directly on leads and listings", "A team/brokerage tier with routing and commission tracking"] },
+    { num: "3", title: "AI &amp; voice layer", when: "Mid-term", goal: "A native voice channel &mdash; real estate runs on phone calls, and today none of that is visible to the CRM.", items: ["Inbound/outbound calling with recording and consent handling", "Call transcription and summaries", "Draft-and-approve follow-ups after every call", "Broker-level coaching insights from the same call data"] },
+    { num: "4", title: "Mobile &amp; field experience", when: "Ongoing, in parallel", goal: "Surfacing everything above where an agent actually is &mdash; between showings, not at a desk.", items: ["Push-driven speed-to-lead with one-tap approval", "Offline-capable showing notes", "Voice-memo-to-note capture"] },
+    { num: "5", title: "Scale &amp; ecosystem", when: "Longer-term", goal: "Extending outward into the rest of an agent's toolchain once the core loop is proven.", items: ["An integrations marketplace (DocuSign, transaction management, accounting)", "Multi-market and multi-MLS expansion", "A white-label tier for larger brokerages"] },
+  ];
+  return `
+    <div class="panel-head">
+      <p class="eyebrow">Roadmap</p>
+      <h1>Where Closr is headed</h1>
+      <p>Built for the independent agent first, not retrofitted from an enterprise tool. Six phases, roughly two quarters out.</p>
+    </div>
+    ${phases.map(p => `
+      <div class="phase">
+        <div class="phase-head">
+          <span class="phase-num">${p.num}</span>
+          <h3>${p.title}</h3>
+          <span class="phase-when">${p.when}</span>
+        </div>
+        <p class="phase-goal">${p.goal}</p>
+        <ul>${p.items.map(it => `<li>${it}</li>`).join("")}</ul>
+      </div>
+    `).join("")}
+  `;
+}
+
+TABS.forEach((t, i) => {
+  const div = document.createElement("div");
+  div.className = "panel" + (i === 0 ? " active" : "");
+  div.id = "panel-" + t.id;
+  div.innerHTML = panelHTML(t.id);
+  panelsEl.appendChild(div);
+});
+
+function selectTab(id) {
+  TABS.forEach(t => {
+    document.getElementById("tabbtn-" + t.id).setAttribute("aria-selected", t.id === id ? "true" : "false");
+    document.getElementById("panel-" + t.id).classList.toggle("active", t.id === id);
+  });
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+</script>
+</body>
+</html>
